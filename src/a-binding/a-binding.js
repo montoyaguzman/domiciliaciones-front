@@ -14,7 +14,7 @@ class Binding extends LitElement {
 
     constructor() {
         super()
-        this.nameBinding = 'binding works!'
+        this.nameBinding = 'binding'
         this.arrayBinding = [
             { type: 'Texto (contenido)', description: '$\{this.myProp\}' },
             { type: 'En id de un elemento', description: '<div id="$\{myId\}"></div>' },
@@ -29,6 +29,7 @@ class Binding extends LitElement {
 
     render() {
         return html`
+            <h1>${this.nameBinding} works!</h1>
             ${this.arrayBinding.map(bindeo => {
                 return html`
                 <li>

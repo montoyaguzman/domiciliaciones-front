@@ -1,6 +1,7 @@
 import { LitElement, html } from '@polymer/lit-element'
 import '../a-binding/a-binding.js'
 import '../a-slot/a-slot.js'
+import '../a-compose/a-compose.js'
 
 class Workspace extends LitElement {
     
@@ -49,6 +50,7 @@ class Workspace extends LitElement {
                 <p slot="middle">esto quiero que vaya en una parte en especifico del a-slot</p>
                 <p slot="final">ahora si lo ultimo xD</p>
             </a-slot>
+            <a-compose></a-compose>
         `
     }
 

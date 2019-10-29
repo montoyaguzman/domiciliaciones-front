@@ -10,7 +10,7 @@ class Slot extends LitElement {
 
     constructor() {
         super()
-        this.nameComponent = 'nameComponent'
+        this.nameComponent = 'slot'
     }
 
     render() {
