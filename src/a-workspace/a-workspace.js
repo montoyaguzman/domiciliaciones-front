@@ -1,4 +1,5 @@
 import { LitElement, html } from '@polymer/lit-element'
+import '../a-binding/a-binding.js'
 
 class Workspace extends LitElement {
     
@@ -42,7 +43,7 @@ class Workspace extends LitElement {
                     html`<span>Podrías descansar en casa</span>`
                 }
             </div>
-
+            <a-binding></a-binding>
         `
     }
 
