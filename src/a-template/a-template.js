@@ -1,13 +1,27 @@
-import { LitElement, html } from '@polymer/lit-element'
+import { LitElement, html, css } from '@polymer/lit-element'
+import { genericSheet } from '../../assets/css/styles.js'
 import '../a-binding/a-binding.js'
 import '../a-slot/a-slot.js'
 import '../a-compose/a-compose.js'
 
-class Workspace extends LitElement {
+const spanColor = css`red`;
+
+class Template extends LitElement {
     
+    static get styles() {
+        return [
+            genericSheet,
+            css`
+            :host { display: block;
+                border: 1px solid yellow;
+            }
+            h3 { color: ${spanColor}; }
+        `]
+    }
+
     static get properties() {
         return {
-            nameWorkspace: String,
+            name: String,
             names: Array,
             isSummerDay: Boolean
         }
@@ -15,7 +29,7 @@ class Workspace extends LitElement {
 
     constructor() {
         super()
-        this.nameWorkspace = 'workspace works!'
+        this.name = 'template'
         this.names = [
             'Jose',
             'Jorge',
@@ -27,10 +41,12 @@ class Workspace extends LitElement {
 
     render() {
         return html`
-            <h1>${this.nameWorkspace}</h1>
+            <div class="centerText">
+                <h2>${this.name} works!</h2>
+            </div>
             <div>
                 <h3>Propiedad simple</h3>
-                <span>${this.nameWorkspace}</span>
+                <span>${this.name}</span>
             </div>
             <div>
                 <h3>Iteración</h3>
@@ -56,4 +72,4 @@ class Workspace extends LitElement {
 
 }
 
-customElements.define('a-workspace', Workspace)
+customElements.define('a-template', Template)

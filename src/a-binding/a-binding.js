@@ -1,7 +1,18 @@
-import { LitElement, html } from '@polymer/lit-element'
+import { LitElement, html, css } from '@polymer/lit-element'
+import { genericSheet } from '../../assets/css/styles.js'
 
 class Binding extends LitElement {
-    
+
+    static get styles() {
+        return [
+            genericSheet,
+            css`
+            :host { display: block;
+                border: 1px solid black;
+            }`
+        ]
+    }
+
     static get properties() {
         return {
             nameBinding: String,
@@ -29,7 +40,7 @@ class Binding extends LitElement {
 
     render() {
         return html`
-            <h1>${this.nameBinding} works!</h1>
+            <h2>${this.nameBinding} works!</h2>
             ${this.arrayBinding.map(bindeo => {
                 return html`
                 <li>
