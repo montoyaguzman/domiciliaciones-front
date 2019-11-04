@@ -1,4 +1,6 @@
 import { LitElement, html, css } from '@polymer/lit-element'
+import { classMap } from 'lit-html/directives/class-map'
+import { styleMap } from 'lit-html/directives/style-map'
 
 class Compose extends LitElement {
     
@@ -7,19 +9,26 @@ class Compose extends LitElement {
             css`
             :host { display: block;
                 border: 1px solid black;
-            }`
+            }
+            .myDiv {
+                background-color: yellow;
+            }
+            `
         ]
     }
 
     static get properties() {
         return {
-            nameCompose: String
+            nameCompose: String,
+            styleForDiv: Object
         }
     }
 
     constructor() {
         super()
         this.nameCompose = 'compose'
+        this.styleForDiv = { color: 'white', backgroundColor: 'black' }
+        this.classes = { myDiv: false, otherClass: false }
     }
 
     render() {
@@ -28,6 +37,10 @@ class Compose extends LitElement {
             ${this.getHeader()}
             ${this.getBody()}
             ${this.getFooter()}
+
+            <div class=${classMap(this.classes)} style=${styleMap(this.styleForDiv)}>
+                este es un div estilizado
+            </div>
         `
     }
 
