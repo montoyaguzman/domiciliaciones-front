@@ -29,7 +29,7 @@ class Properties extends LitElement {
             { description: 'LitElement utliza toAttribute para convertir el valor de la propiedad en un valor valido para el atributo.' },
             { description: 'Si toAttribute retorna null, el atributo es removido, si retorno undefined, no cambia.' },
             { description: 'LitElment da seguimiento a la refleccion de estados, para no realizar un bucle infinito de updates.' },
-            { description: 'Se puede definir explicitamente la funcion hasChanged(oldValue, newValue) para una prop' },
+            { description: 'Se puede definir explicitamente la funcion hasChanged(oldValue, newValue) para una prop' }
         ]
     }
 

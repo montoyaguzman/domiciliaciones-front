@@ -4,6 +4,7 @@ import '../a-binding/a-binding.js'
 import '../a-slot/a-slot.js'
 import '../a-compose/a-compose.js'
 import '../a-properties/a-properties.js'
+import '../a-events/a-events.js'
 
 const spanColor = css`red`;
 
@@ -43,6 +44,13 @@ class Template extends LitElement {
         this.isSummerDay = true
     }
 
+    /*
+    attributeChangedCallback(name, oldVal, newVal) {
+        console.log('attribute change: ', name, newVal)
+        super.attributeChangedCallback(name, oldVal, newVal)
+    } 
+    */   
+
     render() {
         return html`
             <div class="centerText">
@@ -72,8 +80,17 @@ class Template extends LitElement {
             </a-slot>
             <a-compose></a-compose>
             <a-properties></a-properties>
+            <a-events></a-events> 
         `
     }
+
+    /*
+    updated(changedProperties) {
+        changedProperties.forEach((oldValue, propName) => {
+          console.log(`${propName} changed. oldValue: ${oldValue}`)
+        });
+    }
+    */
 
 }
 
