@@ -3,19 +3,23 @@ import { genericSheet } from '../../assets/css/styles.js'
 import '../a-binding/a-binding.js'
 import '../a-slot/a-slot.js'
 import '../a-compose/a-compose.js'
+import '../a-properties/a-properties.js'
 
 const spanColor = css`red`;
 
 class Template extends LitElement {
     
     static get styles() {
+        /* background-color: var(--main-bg-color); */
         return [
             genericSheet,
             css`
             :host { display: block;
                 border: 1px solid yellow;
             }
-            h3 { color: ${spanColor}; }
+            h3 { 
+                color: ${spanColor}; 
+            },
         `]
     }
 
@@ -67,6 +71,7 @@ class Template extends LitElement {
                 <p slot="final">ahora si lo ultimo xD</p>
             </a-slot>
             <a-compose></a-compose>
+            <a-properties></a-properties>
         `
     }
 
