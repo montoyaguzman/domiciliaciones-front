@@ -22,7 +22,13 @@ class LifeCycle extends LitElement {
         ]
         this.methods = [
             { id: 1, name: 'hasChanged', description: 'Funcion de todas las propiedas que valida si hubo un cambio y programa el update.' },
-            { id: 2, name: 'requestUpdate', description: 'Ejecuta las actualizaciones programadas.' }
+            { id: 2, name: 'requestUpdate', description: 'Ejecuta las actualizaciones programadas.' },
+            { id: 3, name: 'performUpdate', description: 'Se ejecuta al final de la ejecución del eventLoop del navegador.' },
+            { id: 4, name: 'shouldUpdate', description: 'Controla si una actualizacion deberia proceder.' },
+            { id: 5, name: 'update', description: 'Refleja valores de propiedades a atributos y llama a render()' },
+            { id: 6, name: 'updated', description: 'Se ejecuta despues del update y el render.' },
+            { id: 7, name: 'updateComplete', description: 'Se ejecuta despues del update y el render.' }
+
         ]
     }
 
