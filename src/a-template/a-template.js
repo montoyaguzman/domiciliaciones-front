@@ -45,13 +45,6 @@ class Template extends LitElement {
         this.isSummerDay = true
     }
 
-    /*
-    attributeChangedCallback(name, oldVal, newVal) {
-        console.log('attribute change: ', name, newVal)
-        super.attributeChangedCallback(name, oldVal, newVal)
-    } 
-    */   
-
     render() {
         return html`
             <div class="centerText">
@@ -85,14 +78,6 @@ class Template extends LitElement {
             <a-lifecycle></a-lifecycle>
         `
     }
-
-    /*
-    updated(changedProperties) {
-        changedProperties.forEach((oldValue, propName) => {
-          console.log(`${propName} changed. oldValue: ${oldValue}`)
-        });
-    }
-    */
 
 }
 
