@@ -5,6 +5,7 @@ import '../a-slot/a-slot.js'
 import '../a-compose/a-compose.js'
 import '../a-properties/a-properties.js'
 import '../a-events/a-events.js'
+import '../a-lifecycle/a-lifecycle.js'
 
 const spanColor = css`red`;
 
@@ -81,6 +82,7 @@ class Template extends LitElement {
             <a-compose></a-compose>
             <a-properties></a-properties>
             <a-events></a-events> 
+            <a-lifecycle></a-lifecycle>
         `
     }
 

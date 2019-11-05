@@ -28,15 +28,10 @@ class EventComponent extends LitElement {
     }
 
     docWrite() {
-        console.log('Se ejecuto el evento')
-
+        console.log('Se ejecuto el evento...')
         this.eventsComponent = 'nuevo nombre'
         this.messages.push('un nuevo saludo')
-
-        this.setAttribute('eventsComponent', this.eventsComponent)
-
-        console.log('eventsComponent', this.eventsComponent)
-        console.log('messages', this.messages)
+        this.requestUpdate()
     }
 
 }
