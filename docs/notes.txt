@@ -24,7 +24,18 @@ que sufrieron cambios en sus propiedades.
     *Regresar la misma vista si el resultado de las props son las mismas.
     *Evitar generar actualizaciones fuera del render.
 
+Shadow DOM vs NO Shadow DOM
 
+<my-element>
+  #shadow-root
+    <p>child 1</p>
+    <p>child 2</p>
+
+vs
+
+createRenderRoot() {
+    return this
+}
 
 
 
