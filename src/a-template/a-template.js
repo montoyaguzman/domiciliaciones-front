@@ -62,7 +62,7 @@ class Template extends LitElement {
 
         document.addEventListener('name-seted', (e) => {
             this.student = { name: e.detail.studentName }
-            // this.teacher = { name: e.detail.teacherName }
+            this.teacher = { name: e.detail.teacherName }
         })
     }
 
@@ -141,7 +141,7 @@ class Template extends LitElement {
     changeStudentName() {
         this.student = { name: 'juanito perez' }
         this.teacher = { name: 'lucia muñoz' }
-        this.requestUpdate()
+        // this.requestUpdate()
     }
 
 }
