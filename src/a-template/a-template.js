@@ -6,6 +6,8 @@ import '../a-compose/a-compose.js'
 import '../a-properties/a-properties.js'
 import '../a-events/a-events.js'
 import '../a-lifecycle/a-lifecycle.js'
+import '../hijo-comp/hijo-comp.js'
+import '../hijo2-comp/hijo2-comp.js'
 
 const spanColor = css`red`;
 
@@ -29,7 +31,10 @@ class Template extends LitElement {
         return {
             name: String,
             names: Array,
-            isSummerDay: Boolean
+            isSummerDay: Boolean,
+            valor: { type: Number },
+            student: { type: Object},
+            teacher: { type: Object}
         }
     }
 
@@ -43,12 +48,57 @@ class Template extends LitElement {
             'David'
         ]
         this.isSummerDay = true
+        this.valor = 10
+        this.student = {
+            name: 'snoppy dog'
+        }
+        this.teacher = {
+            name: 'brenda sedeño'
+        }
+
+        document.addEventListener('value-seted', (e) => {
+            this.valor = e.detail
+        })
+
+        document.addEventListener('name-seted', (e) => {
+            this.student = { name: e.detail.studentName }
+            this.teacher = { name: e.detail.teacherName }
+        })
+    }
+
+    updated(changedProperties) {
+        console.log('===== PADRE =====')
+        console.log(changedProperties)
     }
 
     render() {
         return html`
             <div class="centerText">
                 <h2>${this.name} works!</h2>
+            </div>
+            <div> 
+                <h1>example with prop</h1>
+                <span>Valor: ${this.valor}</span>
+                <button @click=${this.changeValor}>incremente</button>
+                Valor: <input .value=${this.valor}>
+                <hijo-comp valorpadre=${this.valor}></hijo-comp>
+
+                <br/>
+                <button @click=${this.cleanValor}>clean</button>
+
+                <div>
+                    <h1>example with obj.prop</h1>
+                    <span>Nombre: ${this.student.name}</span>
+                    Nombre: <input .value=${this.student.name}>
+                    <button @click=${this.changeStudentName} >cambia nombre</button>
+                    
+                    
+                    <hijo2-comp .studentPadre=${this.student} 
+                                .teacherPadre=${this.teacher}
+                    ></hijo2-comp>
+                    EN PADRE : ${this.teacher.name}
+                </div>
+
             </div>
             <div>
                 <h3>Propiedad simple</h3>
@@ -77,6 +127,21 @@ class Template extends LitElement {
             <a-events></a-events> 
             <a-lifecycle></a-lifecycle>
         `
+    }
+
+    changeValor() {
+        this.valor++
+        console.log('valor: ', this.valor)
+    }
+
+    cleanValor() {
+        this.valor = 0
+    }
+
+    changeStudentName() {
+        this.student = { name: 'juanito perez' }
+        this.teacher = { name: 'lucia muñoz' }
+        // this.requestUpdate()
     }
 
 }
